@@ -1,6 +1,7 @@
 package com.example.channelrouting.service;
 
 import com.example.channelrouting.channel.Channel;
+import com.example.channelrouting.resource.ResourceType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +16,10 @@ public class ChannelService {
         this.channels = channels;
     }
 
-    public void push(String message, String[] channelsName) {
+    public <T> void push(T resource, ResourceType resourceType, String[] channelsName) {
         for (String channelName : channelsName) {
             if (channels.containsKey(channelName)) {
-                channels.get(channelName).send(message);
+                channels.get(channelName).send(resource, resourceType);
             }
         }
     }
