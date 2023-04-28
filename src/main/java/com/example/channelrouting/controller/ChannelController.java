@@ -1,5 +1,9 @@
 package com.example.channelrouting.controller;
 
+import com.example.channelrouting.resource.ResourceType;
+import com.example.channelrouting.resource.impl.FirstResource;
+import com.example.channelrouting.resource.impl.SecondResource;
+import com.example.channelrouting.resource.impl.ThirdResource;
 import com.example.channelrouting.service.ChannelService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
